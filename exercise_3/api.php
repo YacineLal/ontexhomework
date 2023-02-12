@@ -35,9 +35,10 @@ if (!empty($customer)) {
     // Customer ID exists
     echo "Customer Information: <br>";
     echo "ID: " . $customer['id'] . "<br>";
-    echo "Email: " . $customer['email'] . "<br>";
     echo "First Name: " . $customer['firstname'] . "<br>";
     echo "Last Name: " . $customer['lastname'] . "<br>";
+    echo "Email: " . $customer['email'] . "<br>";
+
 } else {
     // Customer ID does not exist
     echo "Error: Customer with ID " . $customerId . " does not exist.";
