@@ -9,13 +9,19 @@
 
 
 
-function customerInfo($customerId)
+function customerInfo()
 {
+    if(isset($_POST['customerId'])) {
+ $customerId = $_POST['customerId'];
+} else{
+    echo "Invalid customer ID";
+}
+
     $apiKey = "81vhcdbbftogrypwbqtrjznhupnfidom";
     $endpoint = "https://api.dev.ecommerce.ontdf.io/rest/V1/customers/";
     $url = $endpoint . $customerId;
+
     $ch = curl_init($url);
-    $customerId = $_POST['customerId'];
 
 
 // Setting options for the cURL session
@@ -47,8 +53,9 @@ function customerInfo($customerId)
     }
 }
 
-function createCustomersFromCSV($rootUri, $apiKey)
-{
+function createCustomersFromCSV(){
+    $rootUri = "https://api.dev.ecommerce.ontdf.io/rest/V1/customers/";
+    $apiKey = "81vhcdbbftogrypwbqtrjznhupnfidom";
     $file= 'customers.csv';
 
     // Check if the file exists
