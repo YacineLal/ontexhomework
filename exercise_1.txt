@@ -1,0 +1,31 @@
+What command(s) can we use to find the distribution of the system installed on the server?
+
+lsb_release -a
+hostnamectl
+cat /etc/os-release
+
+uname -r to find out the kernel version
+
+
+1.2 Explain the permissions of the folder /tmp/exercise_1
+
+By accessing tmp folder using cd/tmp and then using ls -lah we can see the list of files and folders inside /tmp and the permissions attached to them.
+For folder exercise_1 the permissions are: drwxr-sr --
+
+d : which means exercise_1 is a directory and the absence of it means it's a regular file.
+r : Read : considering it's a directory it means we can ls the directory (if it was a file it means we can read it)
+w : Write :  considering it's a directory it means we can modify its contents (if it was a file it means we can write it)
+x : Execute :  considering it's a directory it means we can cd to the directory (if it was a file it means we can execute it)
+
+so the first rwx are linked to the owner permissions (root) which means the root can read , write and execute and the second ones that come the - (sr) are group permissions
+
+s : SUID , set user id , which means set userid on execution or in this case set group id , execute the programe with the id of its owner.
+r : group memebers can read the file , considering it's a directroy , it means ls the directory
+
+
+
+1.3 : Locate the file api_key
+
+cd /tmp
+cd exercise_3
+cat README.md
